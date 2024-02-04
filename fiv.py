@@ -3,7 +3,6 @@
 
 import requests
 import json
-from getch import getch
 import mpv
 
 # Configure MPV player
@@ -58,9 +57,9 @@ def vidpage(id):
         print(jsn["commentCount"], "Comments:", colors.ENDC)
         for i in jsn["comments"]:
             print("----------")
-            if i["isPinned"] == True:
+            if i["isPinned"] is True:
                 print(colors.BOLD + "(pinned)")
-            if i["authorIsChannelOwner"] == True:
+            if i["authorIsChannelOwner"] is True:
                 print(colors.BLUE + colors.BOLD + i["author"], "-", i["publishedText"], colors.ENDC)
             else:
                 print(colors.HEADER + i["author"], "-", i["publishedText"], colors.ENDC)
@@ -69,7 +68,7 @@ def vidpage(id):
                 print(i["likeCount"], "likes", "-", i["replies"]["replyCount"], "replies", colors.ENDC)
             else:
                 print(i["likeCount"], "likes", "-", "0 replies", colors.ENDC)
-            if i["isEdited"] == True:
+            if i["isEdited"] is True:
                 print(colors.BOLD + "(edited)")
             print("----------")
 
@@ -80,7 +79,7 @@ def chpage(id):
     jsn = json.loads(rq.text)
     print("----------")
     print(colors.HEADER + jsn["author"])
-    if jsn["authorVerified"] == True:
+    if jsn["authorVerified"] is True:
         print(colors.BOLD + colors.BLUE + "☑", colors.ENDC, colors.YELLOW)
     print(jsn["subCount"], "subscribers", "-", jsn["totalViews"], "total views", colors.ENDC)
     print(jsn["description"])
@@ -116,7 +115,7 @@ def chpage(id):
             print(key, colors.GREEN)
             print(i["title"], colors.ENDC)
             print(i["lengthSeconds"], "seconds", "-", i["viewCountText"], "-", i["publishedText"])
-            print("----------")   
+            print("----------")
             key += 1
         view = int(input("> "))
         vidpage(jsn["videos"][view]["videoId"])
