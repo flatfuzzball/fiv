@@ -93,7 +93,7 @@ def chpage(id):
             print(key, colors.ENDC)
             print(colors.GREEN + i["title"], colors.ENDC)
             print(i["lengthSeconds"], "seconds", "-", i["viewCountText"], "-", i["publishedText"])
-            print("----------")   
+            print("----------")
             key += 1
     print(colors.BOLD + colors.BLUE + "[6]", colors.ENDC + "All videos")
     
@@ -143,7 +143,7 @@ if cmd == "1":
         print("----------", colors.BOLD)
         print(key)
         print(colors.ENDC + colors.HEADER + i["author"], colors.ENDC)
-        if i["liveNow"] == True:
+        if i["liveNow"] is True:
             print(colors.RED + colors.BOLD + "LIVE!", colors.ENDC)
         print(colors.GREEN + i["title"], colors.ENDC)
         print(i["lengthSeconds"], "seconds", "-", i["viewCountText"], "-", i["publishedText"])
