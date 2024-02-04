@@ -20,4 +20,4 @@ At the top of the file is a "url" variable. Changing this to a closer invidious 
 *   View video comments (not their replies, though).
 *   View channels (name, subs, videos, description etc.)
 
-!(fiv showcase)[https://flatfuzzball.github.io/projects/fiv.png]
+![fiv showcase](https://flatfuzzball.github.io/projects/fiv.png)
